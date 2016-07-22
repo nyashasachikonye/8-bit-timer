@@ -1,0 +1,74 @@
+|Timer
+flag <= Comparator:inst2.flag
+clock => Prescaler:inst.clock
+Prescalar[0] => Prescaler:inst.pre[0]
+Prescalar[1] => Prescaler:inst.pre[1]
+Prescalar[2] => Prescaler:inst.pre[2]
+inComparator[0] => Comparator:inst2.in2[0]
+inComparator[1] => Comparator:inst2.in2[1]
+inComparator[2] => Comparator:inst2.in2[2]
+inComparator[3] => Comparator:inst2.in2[3]
+inComparator[4] => Comparator:inst2.in2[4]
+inComparator[5] => Comparator:inst2.in2[5]
+inComparator[6] => Comparator:inst2.in2[6]
+inComparator[7] => Comparator:inst2.in2[7]
+
+
+|Timer|Comparator:inst2
+in1[0] => Equal0.IN7
+in1[1] => Equal0.IN6
+in1[2] => Equal0.IN5
+in1[3] => Equal0.IN4
+in1[4] => Equal0.IN3
+in1[5] => Equal0.IN2
+in1[6] => Equal0.IN1
+in1[7] => Equal0.IN0
+in2[0] => Equal0.IN15
+in2[1] => Equal0.IN14
+in2[2] => Equal0.IN13
+in2[3] => Equal0.IN12
+in2[4] => Equal0.IN11
+in2[5] => Equal0.IN10
+in2[6] => Equal0.IN9
+in2[7] => Equal0.IN8
+flag <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|Counter:inst1
+clock => result[0]~reg0.CLK
+clock => result[1]~reg0.CLK
+clock => result[2]~reg0.CLK
+clock => result[3]~reg0.CLK
+clock => result[4]~reg0.CLK
+clock => result[5]~reg0.CLK
+clock => result[6]~reg0.CLK
+clock => result[7]~reg0.CLK
+clock => acc[0].CLK
+clock => acc[1].CLK
+clock => acc[2].CLK
+clock => acc[3].CLK
+clock => acc[4].CLK
+clock => acc[5].CLK
+clock => acc[6].CLK
+clock => acc[7].CLK
+result[0] <= result[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= result[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= result[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= result[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= result[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Timer|Prescaler:inst
+clock => result~reg0.CLK
+clock => acc[0].CLK
+clock => acc[1].CLK
+clock => acc[2].CLK
+pre[0] => Equal0.IN5
+pre[1] => Equal0.IN4
+pre[2] => Equal0.IN3
+result <= result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

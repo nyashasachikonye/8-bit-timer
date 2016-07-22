@@ -1,0 +1,11 @@
+|Prescaler
+clock => result~reg0.CLK
+clock => acc[0].CLK
+clock => acc[1].CLK
+clock => acc[2].CLK
+pre[0] => Equal0.IN5
+pre[1] => Equal0.IN4
+pre[2] => Equal0.IN3
+result <= result~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
